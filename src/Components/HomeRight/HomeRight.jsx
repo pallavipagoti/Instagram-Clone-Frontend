@@ -21,7 +21,7 @@ const HomeRight = () => {
             </div>
             <div className="ml-3">
               <p>{user.regUser?.name}</p>
-              <p className="opacity-70">{user.regUser?.username}</p>
+              <p className="opacity-70 text-left">{user.regUser?.username}</p>
             </div>
           </div>
           <div>

@@ -27,7 +27,7 @@ const Profile = () => {
 
     dispatch(getUserProfileAction(token));
     dispatch(findUserByUserNameAction(data));
-  }, [username, user.followUser, user.unfollowUser, dispatch, token]);
+  }, [username, user.followUser, user.unfollowUser]);
   return (
     <div className="px-20 flex-col">
       {user.regUser != null && user.findByUsername != null && (

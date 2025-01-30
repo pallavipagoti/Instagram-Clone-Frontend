@@ -49,7 +49,7 @@ const CommentModal = ({
     if (postId) {
       dispatch(findPostByPostIdAction(data));
     }
-  }, [comment.createdComment, postId, comment.likedComment, dispatch, token]);
+  }, [comment.createdComment, postId, comment.likedComment]);
 
   const handleClose = () => {
     navigate("/");

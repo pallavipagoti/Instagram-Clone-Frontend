@@ -13,7 +13,7 @@ const SuggestionCard = ({ pop }) => {
           alt=""
         />
         <div className="ml-2">
-          <p className="text-sm font-semibold">{pop.username}</p>
+          <p className="text-sm font-semibold capitalize">{pop.username}</p>
           <p className="text-sm font-semibold opacity-70 text-left">Popular</p>
         </div>
       </div>

@@ -55,18 +55,6 @@ const EditAccountDetails = () => {
     dispatch(getUserProfileAction(token));
   }, [token, dispatch]);
 
-  useEffect(() => {
-    const newValue = {};
-
-    for (let item in initialValues) {
-      if (user.regUser && user.regUser[item]) {
-        newValue[item] = user.regUser[item];
-      }
-    }
-    console.log("new value : ", newValue);
-    formik.setValues(newValue);
-  }, [user.regUser]);
-
   const formik = useFormik({
     initialValues: { ...initialValues },
     onSubmit: (values) => {
@@ -84,6 +72,18 @@ const EditAccountDetails = () => {
       navigate(`/${user.regUser?.username}`);
     },
   });
+
+  useEffect(() => {
+    const newValue = {};
+
+    for (let item in initialValues) {
+      if (user.regUser && user.regUser[item]) {
+        newValue[item] = user.regUser[item];
+      }
+    }
+    console.log("new value : ", newValue);
+    formik.setValues(newValue);
+  }, [user.regUser]);
 
   async function handleProfileimageChange(event) {
     const selectedFile = event.target.files[0];

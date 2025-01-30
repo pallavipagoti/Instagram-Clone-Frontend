@@ -2,13 +2,9 @@ import React, { useEffect, useState } from "react";
 import StoryCircle from "../../Components/Story/StoryCircle";
 import HomeRight from "../../Components/HomeRight/HomeRight";
 import PostCard from "../../Components/Post/PostCard";
-import CreatePostModal from "../../Components/Post/CreatePostModal";
 import { useDisclosure } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  findAllPostsByUserIdsAction,
-  findPostsByUserIdAction,
-} from "../../Redux/Post/Action";
+import { findAllPostsByUserIdsAction } from "../../Redux/Post/Action";
 import {
   getPopularUserAction,
   getUserProfileAction,
@@ -16,7 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   const [userIds, setUserIds] = useState();
   const token = localStorage.getItem("token");
   const { user, post } = useSelector((store) => store);

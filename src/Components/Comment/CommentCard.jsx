@@ -47,7 +47,7 @@ const CommentCard = ({ comment }) => {
           <div className="ml-3">
             <p>
               <span className="font-semibold">{comment?.user.username}</span>
-              <span className="ml-2">{comment.content}</span>
+              <span className="ml-2">{comment?.content}</span>
             </p>
             <div className="flex items-center space-x-3 text-xs  opacity-60 pt-2">
               <span>{timeDifference(comment.createdAt)}</span>
