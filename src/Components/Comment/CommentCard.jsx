@@ -28,7 +28,7 @@ const CommentCard = ({ comment }) => {
 
   useEffect(() => {
     setIsCommentLiked(isCommentLikedByUser(comment, user.regUser.id));
-  }, [comment.likedByUsers, user.regUser]);
+  }, [comment, user.regUser]);
 
   return (
     <div>
