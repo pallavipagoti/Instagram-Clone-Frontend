@@ -29,7 +29,18 @@ const EditAccountDetails = () => {
   const token = localStorage.getItem("token");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [imageFile, setImageFile] = useState(null);
-  const [initialValues, setInitialValues] = useState({
+  // const [initialValues, setInitialValues] = useState({
+  //   name: "",
+  //   username: "",
+  //   email: "",
+  //   bio: "",
+  //   mobile: "",
+  //   gender: "",
+  //   website: "",
+  //   private: false,
+  // });
+
+  const initialValues = {
     name: "",
     username: "",
     email: "",
@@ -38,7 +49,7 @@ const EditAccountDetails = () => {
     gender: "",
     website: "",
     private: false,
-  });
+  };
 
   useEffect(() => {
     dispatch(getUserProfileAction(token));

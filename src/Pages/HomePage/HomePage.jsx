@@ -44,8 +44,6 @@ const HomePage = () => {
       jwt: token,
       userids: [userIds].join(","),
     };
-    // console.log("token", token);
-    // console.log("userids", userIds);
 
     dispatch(findAllPostsByUserIdsAction(data));
     dispatch(getPopularUserAction(token));

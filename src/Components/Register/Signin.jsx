@@ -32,15 +32,7 @@ const Signin = () => {
 
   const handleSubmit = (values, action) => {
     dispatch(signinAction(values));
-    // console.log("signin");
-    // const jwt = localStorage.getItem("token");
-    // console.log(jwt);
-    // console.log(jwt);
-
-    //action.setSubmitting(false);
   };
-  // const jwt = localStorage.getItem("token");
-  // console.log(jwt);
 
   useEffect(() => {
     dispatch(spinAction());

@@ -38,23 +38,18 @@ const CommentModal = ({
 
   // console.log(post.postByPostId);
 
-  useEffect(
-    () => {
-      // console.log(postId);
+  useEffect(() => {
+    // console.log(postId);
 
-      const data = {
-        jwt: token,
-        postid: postId,
-      };
+    const data = {
+      jwt: token,
+      postid: postId,
+    };
 
-      if (postId) {
-        dispatch(findPostByPostIdAction(data));
-      }
-    },
-    [comment.createdComment, postId, comment.likedComment],
-    dispatch,
-    token
-  );
+    if (postId) {
+      dispatch(findPostByPostIdAction(data));
+    }
+  }, [comment.createdComment, postId, comment.likedComment, dispatch, token]);
 
   const handleClose = () => {
     navigate("/");
