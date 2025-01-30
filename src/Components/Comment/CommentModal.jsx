@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalBody } from "@chakra-ui/react";
 import {
   BsThreeDots,
   BsBookmark,
@@ -21,10 +13,7 @@ import CommentCard from "./CommentCard";
 import "./CommentModal.css";
 import { useDispatch, useSelector } from "react-redux";
 import { findPostByPostIdAction } from "../../Redux/Post/Action";
-import {
-  createCommentAction,
-  findPostCommentAction,
-} from "../../Redux/Comment/Action";
+import { createCommentAction } from "../../Redux/Comment/Action";
 import { useNavigate, useParams } from "react-router-dom";
 import { timeDifference } from "../../Config/Logics";
 
@@ -163,7 +152,7 @@ const CommentModal = ({
                       value={commentContent}
                       onChange={(e) => setCommentContent(e.target.value)}
                       onKeyPress={(e) => {
-                        if (e.key == "Enter") {
+                        if (e.key === "Enter") {
                           const data = {
                             jwt: token,
                             postId: postId,

@@ -3,7 +3,7 @@ import SuggestionCard from "./SuggestionCard";
 import { useSelector } from "react-redux";
 
 const HomeRight = () => {
-  const { user, post } = useSelector((store) => store);
+  const { user } = useSelector((store) => store);
   return (
     <div>
       <div>

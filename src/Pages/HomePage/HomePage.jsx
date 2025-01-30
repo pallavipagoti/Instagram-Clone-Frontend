@@ -51,28 +51,32 @@ const HomePage = () => {
     dispatch(getPopularUserAction(token));
   }, [userIds, post.createdPost, post.deleteMessage]);
 
-  return (
-    <div>
-      <div className="mt-10 flex w-[100%] justify-center">
-        <div className="w-[44%] px-10">
-          <div className="storyDiv flex space-x-2 border p-4 rounded-md justify-start w-full">
-            {[1, 1, 1].map((item) => (
-              <StoryCircle></StoryCircle>
-            ))}
-          </div>
-          <div className="space-y-10 w-full mt-10">
-            {post.postsByUserIds.length > 0 &&
-              post.postsByUserIds.map((item) => (
-                <PostCard key={item.id} post={item} />
+  if (token) {
+    return (
+      <div>
+        <div className="mt-10 flex w-[100%] justify-center">
+          <div className="w-[44%] px-10">
+            <div className="storyDiv flex space-x-2 border p-4 rounded-md justify-start w-full">
+              {[1, 1, 1].map((item) => (
+                <StoryCircle></StoryCircle>
               ))}
+            </div>
+            <div className="space-y-10 w-full mt-10">
+              {post.postsByUserIds.length > 0 &&
+                post.postsByUserIds.map((item) => (
+                  <PostCard key={item.id} post={item} />
+                ))}
+            </div>
           </div>
-        </div>
-        <div className="w-[27%]">
-          <HomeRight />
+          <div className="w-[27%]">
+            <HomeRight />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    navigate("/login");
+  }
 };
 
 export default HomePage;

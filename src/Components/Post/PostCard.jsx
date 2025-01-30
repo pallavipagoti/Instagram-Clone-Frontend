@@ -16,10 +16,7 @@ import {
 } from "../../Redux/Post/Action";
 import { isPostLikedByUser, isSavedPost } from "../../Config/Logics";
 import { useNavigate } from "react-router-dom";
-import {
-  findPostCommentAction,
-  createCommentAction,
-} from "../../Redux/Comment/Action";
+import { createCommentAction } from "../../Redux/Comment/Action";
 
 const PostCard = ({ post }) => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -68,7 +65,7 @@ const PostCard = ({ post }) => {
   useEffect(() => {
     setPostLiked(isPostLikedByUser(post, user.regUser.id));
     setBookMarked(isSavedPost(user.regUser, post.id));
-  }, [post.likedByUsers, user.regUser]);
+  }, [post.likedByUsers, user.regUser, post]);
 
   return (
     <div>
@@ -164,7 +161,7 @@ const PostCard = ({ post }) => {
               placeholder="Add a comment"
               onChange={(e) => setCommentContent(e.target.value)}
               onKeyPress={(e) => {
-                if (e.key == "Enter") {
+                if (e.key === "Enter") {
                   const data = {
                     jwt: token,
                     postId: post.id,

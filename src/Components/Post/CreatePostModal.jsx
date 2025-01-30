@@ -4,17 +4,11 @@ import {
   Button,
   ModalOverlay,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import "./CreatePostModal.css";
-import {
-  createPostAction,
-  findPostsByUserIdAction,
-} from "../../Redux/Post/Action";
+import { createPostAction } from "../../Redux/Post/Action";
 
 import { FaPhotoVideo } from "react-icons/fa";
 import { GrEmoji } from "react-icons/gr";

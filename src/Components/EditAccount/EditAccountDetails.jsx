@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Button,
-  Checkbox,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -43,7 +42,7 @@ const EditAccountDetails = () => {
 
   useEffect(() => {
     dispatch(getUserProfileAction(token));
-  }, [token]);
+  }, [token, dispatch]);
 
   useEffect(() => {
     const newValue = {};

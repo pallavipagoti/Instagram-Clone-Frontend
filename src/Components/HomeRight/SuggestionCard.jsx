@@ -3,9 +3,6 @@ import { followUserAction } from "../../Redux/User/Action";
 import { useSelector } from "react-redux";
 
 const SuggestionCard = ({ pop }) => {
-  const token = localStorage.getItem("token");
-  const { user } = useSelector((store) => store);
-
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center">

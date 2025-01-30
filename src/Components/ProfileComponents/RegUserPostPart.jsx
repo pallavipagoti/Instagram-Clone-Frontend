@@ -5,7 +5,6 @@ import { BiBookmark } from "react-icons/bi";
 import RegUserPostCard from "./RegUserPostCard";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getUserProfileAction } from "../../Redux/User/Action";
 import { findPostsByUserIdAction } from "../../Redux/Post/Action";
 
 const RegUserPostPart = ({ user }) => {
@@ -39,7 +38,7 @@ const RegUserPostPart = ({ user }) => {
     if (user != null) {
       dispatch(findPostsByUserIdAction({ jwt: token, userid: user?.id }));
     }
-  }, [user, post.createdPost]);
+  }, [user, post.createdPost, dispatch, token]);
 
   return (
     <div>

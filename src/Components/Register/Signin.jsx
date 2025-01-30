@@ -44,10 +44,10 @@ const Signin = () => {
 
   useEffect(() => {
     dispatch(spinAction());
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     if (jwt) dispatch(getUserProfileAction(jwt));
-  }, [jwt]);
+  }, [jwt, dispatch]);
 
   useEffect(() => {
     // console.log(jwt);

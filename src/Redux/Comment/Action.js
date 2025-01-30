@@ -65,12 +65,15 @@ export const likeCommentAction = (data) => async (dispatch) => {
 export const unlikeCommentAction = (data) => async (dispatch) => {
   try {
     const res = await fetch(`${BASE_URL}/comments/unlike/${data.commentid}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + data.jwt,
       },
     });
     const commentUnliked = await res.json();
+    console.log("commentUnliked", commentUnliked);
+
     dispatch({ type: UNLIKE_COMMENT, payload: commentUnliked });
   } catch (error) {
     console.log(error);

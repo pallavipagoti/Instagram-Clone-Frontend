@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TbCircleDashed } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
-import { findPostsByUserIdAction } from "../../Redux/Post/Action";
+
 import {
   followUserAction,
   getUserProfileAction,
@@ -18,7 +18,7 @@ const ProfileUserDetails = ({ user, isFollowed, isRegUser }) => {
 
   useEffect(() => {
     dispatch(getUserProfileAction(token));
-  }, [token]);
+  }, [token, dispatch]);
 
   // useEffect(() => {
   //   if(user){const data = {
