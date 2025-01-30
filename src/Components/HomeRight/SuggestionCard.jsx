@@ -1,6 +1,4 @@
 import React from "react";
-import { followUserAction } from "../../Redux/User/Action";
-import { useSelector } from "react-redux";
 
 const SuggestionCard = ({ pop }) => {
   return (

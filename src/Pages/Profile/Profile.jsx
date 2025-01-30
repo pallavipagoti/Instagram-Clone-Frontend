@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import ProfileUserDetails from "../../Components/ProfileComponents/ProfileUserDetails";
 import RegUserPostPart from "../../Components/ProfileComponents/RegUserPostPart";
-import RegUserPostCard from "../../Components/ProfileComponents/RegUserPostCard";
 
 import {
   findUserByUserNameAction,
@@ -28,7 +27,7 @@ const Profile = () => {
 
     dispatch(getUserProfileAction(token));
     dispatch(findUserByUserNameAction(data));
-  }, [username, user.followUser, user.unfollowUser]);
+  }, [username, user.followUser, user.unfollowUser, dispatch, token]);
   return (
     <div className="px-20 flex-col">
       {user.regUser != null && user.findByUsername != null && (

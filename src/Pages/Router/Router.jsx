@@ -5,8 +5,6 @@ import { Route, useLocation } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import Story from "../Story/Story";
-import Signup from "../../Components/Register/Signup";
-import Signin from "../../Components/Register/Signin";
 import Auth from "../Auth/Auth";
 import EditAccountDetails from "../../Components/EditAccount/EditAccountDetails";
 
