@@ -127,7 +127,7 @@ export const updateUserAction = (data) => async (dispatch) => {
       body: JSON.stringify(data.data),
     });
     const user = await res.json();
-    console.log("Update user: ", user);
+    // console.log("Update user: ", user);
 
     dispatch({ type: UPDATE_USER, payload: user });
   } catch (error) {
@@ -145,7 +145,6 @@ export const getPopularUserAction = (data) => async (dispatch) => {
       },
     });
     const user = await res.json();
-    console.log("Update user: ", user);
 
     dispatch({ type: POPULAR_USER, payload: user });
   } catch (error) {

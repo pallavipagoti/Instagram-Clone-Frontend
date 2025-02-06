@@ -15,7 +15,7 @@ export const signinAction = (data) => async (dispatch) => {
 
     const token = res.headers.get("Authorization");
     localStorage.setItem("token", token);
-    console.log("token", localStorage.getItem("token"));
+    // console.log("token", localStorage.getItem("token"));
 
     dispatch({ type: SIGN_IN, payload: token });
 

@@ -23,7 +23,6 @@ const Profile = () => {
       jwt: token,
       username,
     };
-    console.log("dispatch in profile page");
 
     dispatch(getUserProfileAction(token));
     dispatch(findUserByUserNameAction(data));
