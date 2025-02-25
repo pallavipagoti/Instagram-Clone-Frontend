@@ -1,4 +1,9 @@
-redirects:
-  - source: /.*
-    destination: /index.html
-    status: 200
+services:
+  - type: web
+    name: my-app
+    buildCommand: npm run build
+    startCommand: serve -s build
+    env: production
+    routes:
+      - path: /*
+        rewrite: /index.html
