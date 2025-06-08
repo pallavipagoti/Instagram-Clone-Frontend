@@ -44,12 +44,13 @@ const Signin = () => {
 
   useEffect(() => {
     // console.log(jwt);
+    console.log(user.regUser?.username);
 
-    if (user.regUser?.username && jwt) {
+    if (user && user.regUser?.username && jwt) {
       // navigate("/");
       navigate(`/${user.regUser.username}`);
     }
-  }, [user.regUser, jwt]);
+  }, [user.regUser?.username, jwt]);
   const handleNavigate = () => {
     navigate("/Signup");
   };
