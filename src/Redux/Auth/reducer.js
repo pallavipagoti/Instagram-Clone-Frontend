@@ -13,7 +13,7 @@ export const AuthReducer = (store = initialValue, { type, payload }) => {
   } else if (type === SIGN_UP) {
     return { ...store, signup: payload };
   } else if (type === LOGOUT) {
-    return { ...store, signin: payload };
+    return { ...store, signin: null };
   }
   return store;
 };

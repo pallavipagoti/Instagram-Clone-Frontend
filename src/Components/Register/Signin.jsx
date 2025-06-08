@@ -37,6 +37,7 @@ const Signin = () => {
   useEffect(() => {
     dispatch(spinAction());
   }, [dispatch]);
+
   useEffect(() => {
     if (jwt) dispatch(getUserProfileAction(jwt));
   }, [jwt, dispatch]);
