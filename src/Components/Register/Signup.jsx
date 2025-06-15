@@ -29,9 +29,24 @@ const Signup = () => {
   const { auth } = useSelector((store) => store);
   const toast = useToast();
 
-  const handleSubmit = (values, action) => {
-    dispatch(signupAction(values));
-    action.setSubmitting(false);
+  const handleSubmit = async (values, action) => {
+    try {
+      await dispatch(signupAction(values));
+    } catch (error) {
+      console.log(error);
+
+      // const errorMessage =
+      //   error?.response?.data?.message || "Signup failed. Try again.";
+      toast({
+        title: "Signup Failed",
+        description: error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      action.setSubmitting(false);
+    }
   };
   useEffect(() => {
     dispatch(spinAction);
@@ -43,7 +58,7 @@ const Signup = () => {
       toast({
         title: `Account created for ${auth.signup?.username}`,
         status: "success",
-        duration: 5000,
+        duration: 3000,
         isClosable: true,
       });
     }

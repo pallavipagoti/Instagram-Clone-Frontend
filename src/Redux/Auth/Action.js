@@ -41,10 +41,15 @@ export const signupAction = (data) => async (dispatch) => {
     const user = await res.json();
 
     console.log("signup user: ", user);
+    if (!res.ok) {
+      throw new Error(user.message);
+    }
 
     dispatch({ type: SIGN_UP, payload: user });
+    return user;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
@@ -63,7 +68,7 @@ export const spinAction = () => async (dispatch) => {
     // dispatch({ type: SIGN_IN, payload: token });
 
     const body = await res.text();
-    console.log("messsage: ", body);
+    // console.log("messsage: ", body);
   } catch (error) {
     console.log(error);
   }

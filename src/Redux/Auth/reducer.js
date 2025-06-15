@@ -16,5 +16,6 @@ export const AuthReducer = (store = initialValue, { type, payload }) => {
     console.log(store);
     return { ...store, signin: null };
   }
+
   return store;
 };
